@@ -1,37 +1,27 @@
+import sys
 from pathlib import Path
+sys.path.append(str(Path(__file__).resolve().parent))
+
 import pandas as pd
+from utils import RAW_DIR, load_nasa, save
 
-# ── Paths ────────────────────────────────────────────────────
-BASE_DIR = Path(__file__).resolve().parents[1]
-RAW_DIR = BASE_DIR / "data" / "raw"
-PROCESSED_DIR = BASE_DIR / "data" / "processed"
-PROCESSED_DIR.mkdir(parents=True, exist_ok=True)
-
-# ── CO2 Global Gesamtausstoß (OWID_WRL) ──────────────────────
+# ── Global CO2 Total Emissions (OWID_WRL) ─────────────────────
 co2 = pd.read_csv(RAW_DIR / "annual-co2-emissions-per-country.csv")
-co2.columns = ['Entity', 'Country Code', 'Jahr', 'CO2_Tonnen']
+co2.columns = ['Entity', 'Country Code', 'Year', 'CO2_Tonnes']
 co2_world = co2[co2['Country Code'] == 'OWID_WRL'].copy()
-co2_world = co2_world[(co2_world['Jahr'] >= 1976) & (co2_world['Jahr'] <= 2024)]
-co2_world = co2_world[['Jahr', 'CO2_Tonnen']]
+co2_world = co2_world[['Year', 'CO2_Tonnes']]
 
-# Tonnen → Gigatonnen (lesbarer)
-co2_world['CO2_Gt'] = co2_world['CO2_Tonnen'] / 1_000_000_000
-co2_world = co2_world.drop(columns=['CO2_Tonnen'])
+# Tonnes → Gigatonnes (more readable)
+co2_world['CO2_Gt'] = co2_world['CO2_Tonnes'] / 1_000_000_000
+co2_world = co2_world.drop(columns=['CO2_Tonnes'])
 
-# ── NASA Temperaturanomalie (global) ──────────────────────────
-nasa = pd.read_csv(RAW_DIR / "GLB_Ts_dSST.csv", skiprows=1)
-nasa = nasa[['Year', 'J-D']].copy()
-nasa.columns = ['Jahr', 'Temp_Anomalie']
-nasa['Temp_Anomalie'] = pd.to_numeric(nasa['Temp_Anomalie'], errors='coerce')
-nasa = nasa.dropna(subset=['Temp_Anomalie'])
-nasa = nasa[(nasa['Jahr'] >= 1976) & (nasa['Jahr'] <= 2024)]
+# ── NASA Temperature Anomaly (global) ────────────────────────
+nasa = load_nasa()
 
 # ── Merge ─────────────────────────────────────────────────────
-global_df = co2_world.merge(nasa, on='Jahr', how='inner')
+global_df = co2_world.merge(nasa, on='Year', how='inner')
 
 # ── Save ──────────────────────────────────────────────────────
-global_df.to_csv(PROCESSED_DIR / "global_co2_temp.csv", index=False, sep=';', decimal=',')
-print(f"global_co2_temp.csv saved: {global_df.shape[0]} rows, {global_df.shape[1]} columns")
-print(f"Zeitraum: {global_df['Jahr'].min()}–{global_df['Jahr'].max()}")
-print()
+save(global_df, "global_co2_temp.csv")
+print(f"Years: {global_df['Year'].min()}–{global_df['Year'].max()}")
 print(global_df.tail(5).to_string(index=False))

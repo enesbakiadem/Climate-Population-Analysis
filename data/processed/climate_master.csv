@@ -1,4 +1,4 @@
-Country Name;Country Code;Jahr;GDP;GDP_per_Capita;Population;Unemployment;CO2_per_Capita;Temp_Anomalie
+Country Name;Country Code;Year;GDP;GDP_per_Capita;Population;Unemployment;CO2_per_Capita;Temp_Anomaly
 Afghanistan;AFG;2000;3521418059,92345;174,930991430166;20130327,0;7,897;0,052017417;0,39
 Afghanistan;AFG;2001;2813571753,87253;138,706821676113;20284307,0;7,973;0,05270568;0,53
 Afghanistan;AFG;2002;3825701438,99963;178,954088379235;21378117,0;7,867;0,062730715;0,63

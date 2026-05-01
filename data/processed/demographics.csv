@@ -1,4 +1,4 @@
-Country Name;Country Code;Jahr;Fertility_Rate;CO2_per_Capita;GDP_per_Capita;Population
+Country Name;Country Code;Year;Fertility_Rate;CO2_per_Capita;GDP_per_Capita;Population
 Afghanistan;AFG;1976;7,561;0,15167534;;13059851,0
 Afghanistan;AFG;1977;7,591;0,1787136;;13340756,0
 Afghanistan;AFG;1978;7,599;0,15819776;;13611441,0
