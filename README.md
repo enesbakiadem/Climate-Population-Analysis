@@ -6,6 +6,8 @@ How do CO₂ emissions, economic development, and demographic change relate to g
 
 ## 📸 Key Visuals
 
+The following visuals summarize the main storyline of the project. Additional dashboard screenshots are available in the `visuals/` folder.
+
 ![CO2 & Temperature](./visuals/01_co2_temp.png)
 
 ![CO2 vs Population Share](./visuals/02_co2_population_share.png)
@@ -37,8 +39,6 @@ This project explores these relationships using publicly available data, asking 
 - Visualization using Power BI with interactive year slicer
 
 ## 📈 Key Results
-
-The following visuals summarize the main storyline of the project. Additional dashboard screenshots are available in the `visuals/` folder.
 
 **CO₂ & Temperature**
 Global CO₂ emissions have more than doubled since 1976 — from 18 to 38 Gt. The temperature anomaly follows the same trajectory, reaching +1.28°C above the 1951–1980 baseline in 2024.
