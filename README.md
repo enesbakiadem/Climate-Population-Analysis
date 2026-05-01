@@ -1,8 +1,8 @@
 # Climate & Population Analysis
 
-How do CO2 emissions, economic development, and demographic change relate to global warming?
+How do CO₂ emissions, economic development, and demographic change relate to global warming?
 
-> A data analysis project combining climate, economic, and demographic data to explore the structural drivers of CO2 emissions — developed as part of a political science class at Abendgymnasium Göttingen.
+> A data analysis project combining climate, economic, and demographic data to explore the structural drivers of CO₂ emissions — developed as part of a political science class at Abendgymnasium Göttingen.
 
 ## 📸 Key Visuals
 
@@ -14,7 +14,7 @@ How do CO2 emissions, economic development, and demographic change relate to glo
 
 ## 🎯 Research Question
 
-Which countries drive global CO2 emissions, and how do economic development and demographic change relate to carbon output?
+Which countries drive global CO₂ emissions, and how do economic development and demographic change relate to carbon output?
 
 ## 🧠 Background
 
@@ -24,7 +24,7 @@ This project explores these relationships using publicly available data, asking 
 
 ## 📊 Data Sources
 
-- **Our World in Data** — CO2 per capita, annual CO2 emissions, CO2 share by country, fertility rates
+- **Our World in Data** — CO₂ per capita, annual CO₂ emissions, CO₂ share by country, fertility rates
 - **World Bank Open Data** — GDP, GDP per capita, population, unemployment
 - **NASA GISS** — Global surface temperature anomaly (baseline: 1951–1980)
 
@@ -38,23 +38,25 @@ This project explores these relationships using publicly available data, asking 
 
 ## 📈 Key Results
 
-**CO2 & Temperature**
-Global CO2 emissions have more than doubled since 1976 — from 18 to 38 Gt. The temperature anomaly follows the same trajectory, reaching +1.28°C above the 1951–1980 baseline in 2024.
+The following visuals summarize the main storyline of the project. Additional dashboard screenshots are available in the `visuals/` folder.
+
+**CO₂ & Temperature**
+Global CO₂ emissions have more than doubled since 1976 — from 18 to 38 Gt. The temperature anomaly follows the same trajectory, reaching +1.28°C above the 1951–1980 baseline in 2024.
 
 **Who emits?**
-China and the US alone account for nearly half of global CO2 emissions. The US emits approximately 3x its demographic weight.
+China and the US alone account for nearly half of global CO₂ emissions. The US emits about three times its share of the global population.
 
 **Why?**
-Wealthier nations consistently emit more CO2 per person. Prosperity comes at a carbon cost.
+Wealthier nations consistently emit more CO₂ per person. Higher economic development is strongly associated with higher CO₂ emissions per person.
 
 **The demographic paradox**
-Countries below the fertility replacement level (2.1) emit significantly more CO2 per person than those still growing. The nations contributing most to the next generation emit the least.
+Countries below the fertility replacement level (2.1) tend to emit more CO₂ per person than those still growing. The nations contributing most to the next generation emit the least.
 
 134 out of 204 countries have already fallen below replacement level. Of the 102 still above it, almost all are in Sub-Saharan Africa or South Asia — the regions least responsible for historical emissions.
 
 ## ⚠️ Limitations
 
-- CO2 data from Our World in Data is based on production-based emissions and does not account for trade-embedded emissions
+- CO₂ data from Our World in Data is based on production-based emissions and does not account for trade-embedded emissions
 - Fertility tipping points are defined as the first year below 2.1, not a sustained period — some countries may have temporarily dipped below before recovering
 - Correlation does not imply causation
 - Power BI visuals are interactive and best experienced live — static screenshots lose the year slicer functionality
