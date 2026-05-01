@@ -6,13 +6,10 @@ How do CO2 emissions, economic development, and demographic change relate to glo
 
 ## 📸 Key Visuals
 
-### Global CO2 Emissions & Temperature Anomaly (1976–2024)
 ![CO2 & Temperature](./visuals/01_co2_temp.png)
 
-### CO2 Share vs. Population Share by Country
 ![CO2 vs Population Share](./visuals/02_co2_population_share.png)
 
-### Fertility Rate vs. CO2 Emissions per Capita
 ![Fertility vs CO2](./visuals/05_fertility_co2.png)
 
 ## 🎯 Research Question
