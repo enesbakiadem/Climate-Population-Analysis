@@ -54,6 +54,21 @@ Countries below the fertility replacement level (2.1) tend to emit more CO₂ pe
 
 134 out of 204 countries have already fallen below replacement level. Of the 102 still above it, almost all are in Sub-Saharan Africa or South Asia — the regions least responsible for historical emissions.
 
+## 🔍 SQL Exploration
+
+Beyond the dashboard, I used SQL (SQLite via DB Browser) to explore the data interactively — asking questions that Power BI alone couldn't answer.
+
+**Decoupling: CO₂ down, GDP up**
+Between 1990 and 2020, 45+ countries managed to reduce CO₂ emissions while growing their economies. Filtering for countries already wealthy in 1990 (GDP per capita > $10k) removes the Eastern European cases — where CO₂ fell due to deindustrialization after the Soviet collapse, not climate policy. What remains is a cleaner picture: Denmark (−47%), UK (−46%), and Germany (−39%) lead genuine decoupling, while the US and Japan grew more but reduced far less.
+
+**The demographic transition**
+Grouping countries by GDP growth and tracking relative fertility decline reveals a non-linear pattern. Middle-income countries show the strongest relative drop (~47−49%) — the point where rising female education and urbanization accelerate fastest. Rich countries already had low fertility in 1980 and had little room left to fall.
+
+**A methodological note on CO₂ and temperature**
+A naive correlation between cumulative CO₂ and temperature anomaly yields r = 0.95 — impressive, but misleading. Both variables trend upward over decades, so they correlate automatically. Switching to first-difference analysis (year-on-year changes) drops the correlation to near zero across all tested lags. The relationship is real, but far more complex than a single number suggests.
+
+All queries are documented in [`sql/exploration.sql`](./sql/exploration.sql).
+
 ## ⚠️ Limitations
 
 - CO₂ data from Our World in Data is based on production-based emissions and does not account for trade-embedded emissions
