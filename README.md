@@ -6,7 +6,7 @@ How do CO₂ emissions, economic development, and demographic change relate to g
 
 ## 📸 Key Visuals
 
-The following visuals summarize the main storyline of the project. Additional dashboard screenshots are available in the `visuals/` folder.
+The following visuals summarize the main storyline of the project. All static screenshots are available in [`visuals/`](./visuals/) — the interactive Power BI dashboard is in [`Population_v_Climate.pbix`](./Population_v_Climate.pbix).
 
 ![CO2 & Temperature](./visuals/01_co2_temp.png)
 
