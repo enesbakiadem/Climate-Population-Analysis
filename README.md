@@ -73,7 +73,7 @@ Grouping countries by GDP growth and tracking relative fertility decline reveals
 **A methodological note on CO₂ and temperature**
 A naive correlation between cumulative CO₂ and temperature anomaly yields r = 0.95 — impressive, but misleading. Both variables trend upward over decades, so they correlate automatically. Switching to first-difference analysis (year-on-year changes) drops the correlation to near zero across all tested lags. The relationship is real, but far more complex than a single number suggests.
 
-All queries are documented in [`data/sql/`](./data/sql/).
+All queries are documented in [`sql/`](./sql/).
 
 ## ⚠️ Limitations
 
