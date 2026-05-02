@@ -37,6 +37,7 @@ This project explores these relationships using publicly available data, asking 
 - Filtering to real countries (ISO 3-letter codes) to exclude regional aggregates
 - Calculation of population share and fertility tipping points (first year below replacement level of 2.1)
 - Visualization using Power BI with interactive year slicer
+- SQL queries (SQLite) for exploratory analysis across joined tables
 
 ## 📈 Key Results
 
@@ -52,14 +53,19 @@ Wealthier nations consistently emit more CO₂ per person. Higher economic devel
 **The demographic paradox**
 Countries below the fertility replacement level (2.1) tend to emit more CO₂ per person than those still growing. The nations contributing most to the next generation emit the least.
 
-134 out of 204 countries have already fallen below replacement level. Of the 102 still above it, almost all are in Sub-Saharan Africa or South Asia — the regions least responsible for historical emissions.
+The majority of countries have already fallen below replacement level. 
+Of those still above it, almost all are in Sub-Saharan Africa or South Asia — the regions least responsible for historical emissions.
 
 ## 🔍 SQL Exploration
 
-Beyond the dashboard, I used SQL (SQLite via DB Browser) to explore the data interactively — asking questions that Power BI alone couldn't answer.
+Beyond the dashboard, I used SQL (SQLite via DB Browser) to explore the data interactively — asking questions that are easier to express and validate through SQL.
 
 **Decoupling: CO₂ down, GDP up**
-Between 1990 and 2020, 45+ countries managed to reduce CO₂ emissions while growing their economies. Filtering for countries already wealthy in 1990 (GDP per capita > $10k) removes the Eastern European cases — where CO₂ fell due to deindustrialization after the Soviet collapse, not climate policy. What remains is a cleaner picture: Denmark (−47%), UK (−46%), and Germany (−39%) lead genuine decoupling, while the US and Japan grew more but reduced far less.
+Between 1990 and 2020, 45+ countries managed to reduce CO₂ emissions while growing their economies.
+
+Filtering for countries already wealthy in 1990 (GDP per capita > $10k) removes many Eastern European cases, where CO₂ fell mainly due to deindustrialization after the Soviet collapse rather than climate policy.
+
+What remains is a cleaner picture: Denmark (−47%), the UK (−46%), and Germany (−39%) lead genuine decoupling, while the US and Japan grew more but reduced far less.
 
 **The demographic transition**
 Grouping countries by GDP growth and tracking relative fertility decline reveals a non-linear pattern. Middle-income countries show the strongest relative drop (~47−49%) — the point where rising female education and urbanization accelerate fastest. Rich countries already had low fertility in 1980 and had little room left to fall.
@@ -67,7 +73,7 @@ Grouping countries by GDP growth and tracking relative fertility decline reveals
 **A methodological note on CO₂ and temperature**
 A naive correlation between cumulative CO₂ and temperature anomaly yields r = 0.95 — impressive, but misleading. Both variables trend upward over decades, so they correlate automatically. Switching to first-difference analysis (year-on-year changes) drops the correlation to near zero across all tested lags. The relationship is real, but far more complex than a single number suggests.
 
-All queries are documented in [`sql/exploration.sql`](./sql/exploration.sql).
+All queries are documented in [`data/sql/`](./data/sql/).
 
 ## ⚠️ Limitations
 
@@ -75,11 +81,13 @@ All queries are documented in [`sql/exploration.sql`](./sql/exploration.sql).
 - Fertility tipping points are defined as the first year below 2.1, not a sustained period — some countries may have temporarily dipped below before recovering
 - Correlation does not imply causation
 - Power BI visuals are interactive and best experienced live — static screenshots lose the year slicer functionality
+- The analysis is descriptive and does not model causal mechanisms between emissions, economic development, fertility, and temperature.
 
 ## 🛠️ Tools
 
 - Python (pandas, pathlib)
 - Power BI
+- SQL (SQLite)
 - Git / GitHub
 
 ## ⚙️ Reproducing the Analysis
