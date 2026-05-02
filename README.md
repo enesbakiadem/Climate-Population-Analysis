@@ -1,5 +1,13 @@
 # Climate & Population Analysis
 
+## Project Snapshot
+
+- **Type:** End-to-end data analysis project
+- **Tools:** Python, pandas, SQLite, Power BI
+- **Data:** Our World in Data, World Bank, NASA GISS
+- **Focus:** CO₂ emissions, economic development, population, fertility
+- **Output:** Reproducible CSV pipeline, SQL exploration, interactive Power BI dashboard
+
 How do CO₂ emissions, economic development, and demographic change relate to global warming?
 
 > A data analysis project combining climate, economic, and demographic data to explore the structural drivers of CO₂ emissions — developed as part of a political science class at Abendgymnasium Göttingen.
