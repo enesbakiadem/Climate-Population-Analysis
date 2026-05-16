@@ -16,11 +16,10 @@ How do CO₂ emissions, economic development, and demographic change relate to g
 
 The following visuals summarize the main storyline of the project. All static screenshots are available in [`visuals/`](./visuals/) — the interactive Power BI dashboard is in [`Population_v_Climate.pbix`](./Population_v_Climate.pbix).
 
-![CO2 & Temperature](./visuals/01_co2_temp.png)
+![Fertility vs CO2](./visuals/04_fertility_co2.png)
 
-![CO2 vs Population Share](./visuals/02_co2_population_share.png)
+![CO2 vs Population Share](./visuals/01_co2_population_share.png)
 
-![Fertility vs CO2](./visuals/05_fertility_co2.png)
 
 ## 🎯 Research Question
 
